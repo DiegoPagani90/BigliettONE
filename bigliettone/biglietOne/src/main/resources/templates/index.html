@@ -164,9 +164,18 @@ display: block;
 
   <!-- FINE HEADER -->
 
-<div class="carousel">
+<!-- <div class="carousel">
   <div th:each="evento : ${listaEventi}">
       <img th:src="${evento.locandina}" th:alt="Slide" />
+  </div>
+</div> -->
+
+<div class="carousel">
+  <div th:each="evento : ${listaEventi}">
+    <a th:href="@{/paginaEvento?idEvento={idEvento}(idEvento=${evento.id})}" > 
+      <!--  th:href="@{/paginaEventi( idEvento=${evento.id})}" -->
+      <img th:src="${evento.locandina}" th:alt="Slide" />
+    </a>
   </div>
 </div>
 
